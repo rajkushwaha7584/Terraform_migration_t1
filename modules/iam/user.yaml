@@ -1,0 +1,7 @@
+users:
+  - username: "ram"
+    role: "admin"  
+  - username: "shyam"
+    role: "read-only"
+  - username: "stree"
+    role: "ec2allaccess"
