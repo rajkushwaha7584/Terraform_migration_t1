@@ -1,6 +1,17 @@
 resource "aws_instance" "this" {
-  ami           = "ami-0b6d9d3d33ba97d99"
+  ami           = var.ami_id
   instance_type = var.instance_type
+
+  vpc_security_group_ids = var.vpc_security_group_ids
+
+  metadata_options {
+    http_endpoint = "enabled"
+    http_tokens   = "required"
+  }
+
+  root_block_device {
+    encrypted = true
+  }
 
   tags = {
     Name = "Terraform-EC2"
